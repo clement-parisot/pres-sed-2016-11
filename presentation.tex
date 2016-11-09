@@ -1,0 +1,165 @@
+\documentclass[11pt,compress]{beamer}
+
+\RequirePackage[francais]{babel}
+\RequirePackage{amsfonts,amssymb,amsmath,mathtools}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{lmodern}
+\RequirePackage{mathpazo}
+\usepackage{tikz}
+
+\definecolor{LHCblue}{RGB}{4, 114, 255}
+\usecolortheme[named=LHCblue]{structure}
+\usepackage[bars]{beamerthemetree} %Beamer theme v 2.2
+\usefonttheme[onlymath]{serif}
+\usepackage{kerkis}
+\setbeamercovered{highly dynamic}
+\usetheme{Ilmenau} % Beamer theme v 3.0
+\useoutertheme[subsection=true]{smoothbars}%Beamer Outer Theme-circles on top
+\usefonttheme{serif}
+\useinnertheme{circles} %rectangle bullet points instead of circle ones
+\usepackage{beamerthemebars}
+
+\setbeamerfont{section in toc}{size=\small}
+\setbeamerfont{subsection in toc}{size=\small}
+\setbeamercolor{subsection in toc}{fg=LHCblue!40!black}
+\expandafter\def\expandafter\insertshorttitle\expandafter{%
+  \insertshorttitle\hfill%
+  \insertframenumber\,/\,\inserttotalframenumber}
+\setbeamertemplate{navigation symbols}{}%remove navigation symbols
+
+\AtBeginSection[]
+{
+  \begin{frame}
+  \frametitle{Plan}
+  \begin{columns}[t]
+  \begin{column}{5cm}
+  \tableofcontents[sections={1-3},currentsection, hideothersubsections]
+  \end{column}
+  \begin{column}{5cm}
+  \tableofcontents[sections={4-6},currentsection,hideothersubsections]
+  \end{column}
+  \end{columns}
+  \end{frame}
+}
+
+\begin{document}
+\title{Soutenance Mémoire d'ingénieur}
+\subtitle{Optimisation de la récupération\\des configurations réseau}
+\author[Clément PARISOT]{
+Clément PARISOT\\
+\scriptsize \'{E}lève TELECOM Nancy\\[1cm]
+\begin{columns}[t]
+  \begin{column}{5cm}
+   \centering
+   \small Sylvain HALL\'{E}\\
+   \scriptsize Professeur référent UQAC\\
+  \end{column}
+  \begin{column}{5cm}
+   \centering
+   \small Olivier FESTOR\\
+   \scriptsize Encadrant universitaire TELECOM Nancy
+  \end{column}
+\end{columns}
+\hfill\\[1cm]
+}
+
+\institute{}
+\titlegraphic{%
+\begin{center}
+\includegraphics[height=0.75cm]{../figures/school-logo}
+\hspace{10mm}
+\includegraphics[height=0.75cm]{../figures/collegium-logo}
+\hspace{10mm}
+\includegraphics[height=0.75cm]{../figures/university-logo}
+\hspace{10mm}
+\includegraphics[height=0.75cm]{../figures/uqac-logo}
+\end{center}
+}
+\date{\scriptsize 04/09/2014}
+
+{
+\setbeamertemplate{footline}{} 
+\setbeamertemplate{headline}{}
+\usebackgroundtemplate{
+  \begin{tikzpicture}
+    \path [outer color = LHCblue!15, inner color = white]
+      (0,0) rectangle (\paperwidth,\paperheight);
+  \end{tikzpicture}}
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+}
+\addtocounter{framenumber}{-1}
+\institute{TELECOM Nancy}
+
+\begin{frame}
+\frametitle{Plan}
+\begin{columns}[t]
+  \begin{column}{5cm}
+  \tableofcontents[sections={1-3},hideothersubsections]
+  \end{column}
+  \begin{column}{5cm}
+  \tableofcontents[sections={4-6},hideothersubsections]
+  \end{column}
+  \end{columns}
+\end{frame}
+
+\section{Introduction}
+\subsection{}
+\begin{frame}
+\frametitle{Introduction}
+
+\end{frame}
+
+\section{Présentation de l'UQAC}
+\subsection{UQAC}
+\begin{frame}
+\frametitle{Présentation de l'UQAC}
+\framesubtitle{UQAC: Université du Québec à Chicoutimi}
+\end{frame}
+\subsection{DIM}
+\begin{frame}
+\frametitle{Présentation de l'UQAC}
+\framesubtitle{DIM: Département Informatique et Mathématique}
+\end{frame}
+\subsection{LIF}
+\begin{frame}
+\frametitle{Présentation de l'UQAC}
+\framesubtitle{LIF: Laboratoire d'Informatique Formel}
+\end{frame}
+
+\section{Problématique}
+\subsection{}
+\begin{frame}
+\frametitle{Problématique}
+
+\end{frame}
+
+\section{Solution}
+\subsection{}
+\begin{frame}
+\frametitle{Solution}
+
+\end{frame}
+
+\section{Résultats}
+\subsection{}
+\begin{frame}
+\frametitle{Résultats}
+
+\end{frame}
+
+\section{Conclusion}
+\subsection{}
+\begin{frame}
+\frametitle{Conclusion}
+:)
+\end{frame}
+
+\section*{}
+\begin{frame}
+\frametitle{Sources}
+
+\end{frame}
+\end{document}
