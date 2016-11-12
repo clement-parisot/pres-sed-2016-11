@@ -192,10 +192,33 @@
 \subsection{Xen/Puppet4}
 \begin{frame}
 \frametitle{Virtualisation of services infrastructure with Xen}
+\begin{itemize}
+\item 1 VM (domU) for each service
+\begin{itemize}
+\item Supervision
+\item DNS
+\item mediawiki
+\end{itemize}
+\item 1 to 3 hypervisor (dom0) per site
+\item Filesystem: lvm and ext4
+\item OS: Debian (lenny, squeeze, wheezy and jessie)
+\item No manager to create, destroy or migrate the VM (Xen CLI) 
+\end{itemize}
 \end{frame}
 
 \begin{frame}
 \frametitle{Puppet for services management}
+\begin{itemize}
+\item Configuration management
+\item Model-driven approach
+\item 1 module for each application (nagios, bugzilla, apache, ...)
+\item Puppet run on all the VM and configure:
+\begin{itemize}
+\item Files (content, owner, rights...)
+\item Packages (present, absent, version, ...)
+\item Services (running, stopped)
+\end{itemize}
+\end{itemize}
 \end{frame}
 
 \section{Example: Mediawiki upgrade}
