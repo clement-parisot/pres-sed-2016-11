@@ -145,7 +145,6 @@
 \item Alerts on load, ping, Hard disk failure, ...
 \item One server per site
 \item Reporting by mail 
-\item Unified dashboard for global view
 \end{itemize}
 \end{frame}
 
@@ -160,14 +159,33 @@
 \frametitle{Icinga overview}
 \begin{itemize}
 \item Better UI
-\item Compatibility with Nagios checks
+\item Unified dashboard for global view
+\item Compatibility with Nagios (old) checks
 \item Distributed monitoring
 \end{itemize}
 \end{frame}
 
 \subsection{Incident and ticket}
 \begin{frame}
-\frametitle{Bugzilla}
+\frametitle{Bugzilla: different sorts of ticket}
+\begin{itemize}
+\item Incident reaction (network broken, services down...)
+\item Event on Grid'5000 (maintenance, update...)
+\item Problem with a node, environment or software
+\item Feature request
+\item Daily task (projet management)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Bugzilla: how to fill a ticket}
+\begin{itemize}
+\item Component: a site, an internal/external service, network, documentation ?
+\item Severity: high, medium, low, to discuss
+\item Assignee: person in charge of the resolution
+\item Status: New, Assigned, Resolved
+\item Keywords: event, incident, task of a project
+\end{itemize}
 \end{frame}
 
 \section{Services orchestration}
