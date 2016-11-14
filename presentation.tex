@@ -224,7 +224,31 @@
 \section{Example: Mediawiki upgrade}
 \subsection{Package creation}
 \begin{frame}
+\frametitle{How to upgrade mediawiki}
+\begin{itemize}
+\item Upgrade version of: mysql, php
+\item Read release notes
+\item Dump existing DB files (backup)
+\item Upload tarball and untar
+\item Adapt LocalSettings.php file
+\item Change rights/owner on images directory
+\item Run the upgrade script
+\end{itemize}
+%\end{block}
+\end{frame}
+
+\begin{frame}
 \frametitle{Create a Debian package for mediawiki}
+\begin{itemize}
+\item Untar the mediawiki to the correct location
+\item Just add dependances to packages and their versions in the debian control file
+\item Add a postinstall script to change the right/owner on images directory
+\item Eventually run the upgrade script at the end
+\item Specify the version installed by this package
+\end{itemize}
+\begin{block}{}
+Debian will manage the dependances of packages to install and their version for us
+\end{block}
 \end{frame}
 
 \subsection{Vagrant}
