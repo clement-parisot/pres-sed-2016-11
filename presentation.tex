@@ -254,17 +254,65 @@ Debian will manage the dependances of packages to install and their version for 
 \subsection{Vagrant}
 \begin{frame}
 \frametitle{Vagrant as a testing environment}
+\begin{block}{Vagrant}
+Create and configure lightweight, reproducible, and portable development environments.
+\end{block}
+\begin{itemize}
+\item Single file to describe the type of machine you want
+\begin{itemize}
+\item OS (Debian)
+\item Software installed (Puppet)
+\item Host file sharing
+\item Network binding (access to Grid'5000 API)
+\end{itemize}
+\item Single command to create the development environment
+\begin{itemize}
+\item vagrant up
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Use vagrant to test Puppet execution}
+\begin{itemize}
+\item Create the mediawiki Puppet module which install mediawiki package
+\item Create a Vagrantfile for a Debian+Puppet environment
+\item Dump the actual wiki database and use it in vagrant
+\item Create a tunnel to the user and Grid'5000 API to test specific 'Special Pages'
+\end{itemize}
+\begin{block}{}
+At this point:
+\begin{itemize}
+\item \textbf{packaging problem} are removed
+\item receipe works with the \textbf{production database}
+\item \textbf{connexion to API} is functionnal
+\end{itemize}
+\end{block}
 \end{frame}
 
 \subsection{Upgrade in production}
 \begin{frame}
 \frametitle{Tests in production}
+\begin{itemize}
+\item Create a VM (mediawiki-dev.nancy.grid5000.fr) and run puppet on it
+\item New problems apears:
+\begin{itemize}
+\item Hostname is different from 'mediawiki.grid5000.fr'
+\item Test of redirection with apache
+\end{itemize}
+\item Test in DMZ
+\item Last problems
+\begin{itemize}
+\item Filter rules on DMZ
+\item Manual installed files (mediawiki plugins, themes)
+\end{itemize}
+\end{itemize}
 \end{frame}
 
 \section{Conclusion}
 \begin{frame}
 \frametitle{Conclusion}
-:)
+
 \end{frame}
 
 \section*{}
