@@ -130,6 +130,26 @@
 \end{frame}
 
 \section{Support}
+\subsection{Admin job}
+\begin{frame}
+\frametitle{Support team tasks}
+Day-to-Day Tasks
+\begin{itemize}
+\item Weekly phone meeting
+\item Answering users mails
+\item System administration
+\item Network administration
+\item Grid'5000 tools improvement
+\end{itemize}
+Background Tasks
+\begin{itemize}
+\item Integration of new clusters
+\item Storage addition in Talc
+\item Backup /home directories of local users
+\end{itemize}
+\end{frame}
+
+
 \subsection{Monitoring services and alerts}
 \begin{frame}
 \frametitle{Nagios dashboard}
@@ -179,19 +199,31 @@
 
 \begin{frame}
 \frametitle{Bugzilla: how to fill a ticket}
-\begin{itemize}
-\item Component: a site, an internal/external service, network, documentation ?
-\item Severity: high, medium, low, to discuss
-\item Assignee: person in charge of the resolution
-\item Status: New, Assigned, Resolved
-\item Keywords: event, incident, task of a project
-\end{itemize}
+%\begin{columns}[c]
+%  \begin{column}{4cm}
+%\begin{tiny}
+%\begin{enumerate}
+%\item[Component:] a site, an internal/external service, network, documentation ?
+%\item[Severity:] high, medium, low, to discuss
+%\item[Assignee:] person in charge of the resolution
+%\item[Status:] New, Assigned, Resolved
+%\item[Keywords:] event, incident, task of a project
+%\end{enumerate}
+%\end{tiny}
+%\end{column}
+%  \begin{column}{6cm}
+  \includegraphics[scale=0.29]{figures/bugzilla_ticket}
+%  \end{column}
+%\end{columns}
 \end{frame}
 
 \section{Services orchestration}
 \subsection{Xen/Puppet4}
 \begin{frame}
 \frametitle{Virtualisation of services infrastructure with Xen}
+\begin{center}
+\includegraphics[scale=0.04]{figures/xen}
+\end{center}
 \begin{itemize}
 \item 1 VM (domU) for each service
 \begin{itemize}
@@ -208,6 +240,11 @@
 
 \begin{frame}
 \frametitle{Puppet for services management}
+\begin{center}
+\includegraphics[scale=0.2]{figures/puppet}
+\end{center}
+\begin{columns}
+\begin{column}{8cm}
 \begin{itemize}
 \item Configuration management
 \item Model-driven approach
@@ -219,13 +256,22 @@
 \item Services (running, stopped)
 \end{itemize}
 \end{itemize}
+\end{column}
+\begin{column}{3cm}
+\includegraphics[scale=0.15]{figures/puppet_config}
+\end{column}
+\end{columns}
 \end{frame}
 
 \section{Example: Mediawiki upgrade}
 \subsection{Package creation}
 \begin{frame}
 \frametitle{How to upgrade mediawiki}
-\begin{itemize}
+\begin{center}
+\includegraphics[scale=0.2]{figures/mw}
+\end{center}
+\begin{block}{Procedure}
+\begin{enumerate}
 \item Upgrade version of: mysql, php
 \item Read release notes
 \item Dump existing DB files (backup)
@@ -233,12 +279,15 @@
 \item Adapt LocalSettings.php file
 \item Change rights/owner on images directory
 \item Run the upgrade script
-\end{itemize}
-%\end{block}
+\end{enumerate}
+\end{block}
 \end{frame}
 
 \begin{frame}
 \frametitle{Create a Debian package for mediawiki}
+\begin{center}
+\includegraphics[scale=0.3]{figures/deb_package}
+\end{center}
 \begin{itemize}
 \item Untar the mediawiki to the correct location
 \item Just add dependances to packages and their versions in the debian control file
@@ -247,14 +296,17 @@
 \item Specify the version installed by this package
 \end{itemize}
 \begin{block}{}
-Debian will manage the dependances of packages to install and their version for us
+Debian will manage the dependances of packages and their version for us
 \end{block}
 \end{frame}
 
 \subsection{Vagrant}
 \begin{frame}
-\frametitle{Vagrant as a testing environment}
-\begin{block}{Vagrant}
+\frametitle{Testing environment}
+\begin{center}
+\includegraphics[scale=0.15]{figures/vagrant}
+\end{center}
+\begin{block}{}
 Create and configure lightweight, reproducible, and portable development environments.
 \end{block}
 \begin{itemize}
@@ -273,7 +325,12 @@ Create and configure lightweight, reproducible, and portable development environ
 \end{frame}
 
 \begin{frame}
-\frametitle{Use vagrant to test Puppet execution}
+\frametitle{Test Puppet execution in Vagrant}
+\includegraphics[scale=0.16]{figures/process}
+\end{frame}
+
+\begin{frame}
+\frametitle{Test Puppet execution in Vagrant}
 \begin{itemize}
 \item Create the mediawiki Puppet module which install mediawiki package
 \item Create a Vagrantfile for a Debian+Puppet environment
@@ -335,6 +392,7 @@ At this point:
 \section*{}
 \begin{frame}
 \frametitle{Sources}
+\begin{scriptsize}
 \begin{description}
 \item[Grid'5000:]\url{https://grid5000.fr/}
 \item[Nagios:]\url{https://www.nagios.org/}
@@ -342,7 +400,9 @@ At this point:
 \item[Bugzilla:]\url{https://www.bugzilla.org/}
 \item[Puppet:]\url{https://puppet.com/}
 \item[Vagrant:]\url{https://www.vagrantup.com/}
+\item[Mediawiki-Vagrant:]\url{https://www.mediawiki.org/wiki/MediaWiki-Vagrant/fr}
 \item[Mediawiki:]\url{https://www.mediawiki.org/wiki/MediaWiki}
 \end{description}
+\end{scriptsize}
 \end{frame}
 \end{document}
