@@ -93,10 +93,10 @@
 \end{block}
 \begin{itemize}
 \item Created in 2003
-\item Need of a bigger and efficient platform for experiments
-
+\item Bare metal ressources
 \item Give users root access to the compute nodes
-\item Deploy environment
+\item Deploy environment (kadeploy)
+\item Network configuration (kavlan)
 \item Allows experiments on all the software layers
 \end{itemize}
 \end{frame}
@@ -143,7 +143,9 @@ Day-to-Day Tasks
 \end{itemize}
 Background Tasks
 \begin{itemize}
-\item Integration of new clusters
+\item Kwapi: energy and network monitoring tool
+\item Production jobs integration in Grid'5000
+\item Integration of 6 new clusters
 \item Storage addition in Talc
 \item Backup /home directories of local users
 \end{itemize}
@@ -183,6 +185,9 @@ Background Tasks
 \item Compatibility with Nagios (old) checks
 \item Distributed monitoring
 \end{itemize}
+\begin{center}
+\includegraphics[scale=0.3]{figures/icinga2_distributed_roles}
+\end{center}
 \end{frame}
 
 \subsection{Incident and ticket}
@@ -193,7 +198,7 @@ Background Tasks
 \item Event on Grid'5000 (maintenance, update...)
 \item Problem with a node, environment or software
 \item Feature request
-\item Daily task (projet management)
+\item Daily tasks (project management)
 \end{itemize}
 \end{frame}
 
@@ -331,38 +336,59 @@ Create and configure lightweight, reproducible, and portable development environ
 
 \begin{frame}
 \frametitle{Test Puppet execution in Vagrant}
+\begin{block}{Local test: laptop}
 \begin{itemize}
 \item Create the mediawiki Puppet module which install mediawiki package
 \item Create a Vagrantfile for a Debian+Puppet environment
 \item Dump the actual wiki database and use it in vagrant
 \item Create a tunnel to the user and Grid'5000 API to test specific 'Special Pages'
 \end{itemize}
-\begin{block}{}
+\end{block}
 At this point:
 \begin{itemize}
 \item \textbf{packaging problem} are removed
 \item receipe works with the \textbf{production database}
-\item \textbf{connexion to API} is functionnal
+\item \textbf{connection to API} is functionnal
 \end{itemize}
-\end{block}
 \end{frame}
 
 \subsection{Upgrade in production}
 \begin{frame}
 \frametitle{Tests in production}
+\begin{block}{Nancy test: mediawiki-dev.nancy.grid5000.fr}
 \begin{itemize}
-\item Create a VM (mediawiki-dev.nancy.grid5000.fr) and run puppet on it
+\item Create a Xen+Puppet VM on Grid'5000 Nancy 
+\item Run puppet on it
 \item New problems apears:
 \begin{itemize}
-\item Hostname is different from 'mediawiki.grid5000.fr'
+\item Connection inside of Grid'5000
 \item Test of redirection with apache
 \end{itemize}
+\end{itemize}
+\end{block}
+At this point:
+\begin{itemize}
+\item \textbf{Grid'5000 puppet} can configure the VM
+\item Connection with \textbf{Grid'5000 services} can be tested (nagios, syslogs, ...)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Tests in production}
+\begin{block}{Grid'5000: mediawiki.grid5000.fr}
+\begin{itemize}
 \item Test in DMZ
 \item Last problems
 \begin{itemize}
 \item Filter rules on DMZ
 \item Manual installed files (mediawiki plugins, themes)
 \end{itemize}
+\end{itemize}
+\end{block}
+At this point:
+\begin{itemize}
+\item Connection from \textbf{outside} of Grid'5000
+\item Specific \textbf{security} rules
 \end{itemize}
 \end{frame}
 
@@ -386,7 +412,6 @@ At this point:
 \item 1 file and 1 command to test your receipes
 \end{itemize}
 \end{itemize}
-
 \end{frame}
 
 \section*{}
